@@ -116,6 +116,9 @@ document.getElementById("teamo-btn").addEventListener("click", function() {
 
 // Función para la explosión de corazones
 function explosionDeCorazones() {
+    let sonidoExplosion = new Audio("audio/xd.mp3"); 
+    sonidoExplosion.play();  
+    
     for (let i = 0; i < 30; i++) {  
         let corazon = document.createElement("div");
         corazon.classList.add("corazon");
