@@ -156,8 +156,8 @@ footer {
 
 .slider {
     width: 90%; 
-    max-width: 600px; 
-    height: 200px; 
+    max-width: 750px; 
+    height: 350px; 
     overflow: hidden;
     position: relative;
     margin: 20px auto; 
