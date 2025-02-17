@@ -100,7 +100,7 @@ document.getElementById("contador").textContent = contador;
 
 
 document.getElementById("teamo-btn").addEventListener("click", function() {
-    if (contador < 1000) { 
+    if (contador < 100000) { 
         contador++;
         document.getElementById("contador").textContent = contador;
 
@@ -109,7 +109,7 @@ document.getElementById("teamo-btn").addEventListener("click", function() {
     }
 
     
-    if (contador === 1000) {
+    if (contador  %  1000 === 0) {
         explosionDeCorazones();
     }
 });
