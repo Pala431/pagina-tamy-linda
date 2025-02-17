@@ -6,7 +6,7 @@ let canciones = [
     "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
     "https://www.youtube.com/watch?v=AjGkbFqi67c",
     "https://www.youtube.com/watch?v=NwFVSclD_uc",
-    "https://www.youtube.com/watch?v=8Bu3N-2tA_0"
+    "https://www.youtube.com/watch?v=aZLI14nFC4E"
 ];
 
 let cancionesReproducidas = [];
