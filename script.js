@@ -21,7 +21,6 @@ document.getElementById("yt-btn").addEventListener("click", function () {
 
     let cancionesDisponibles = canciones.filter(cancion => !cancionesReproducidas.includes(cancion));
     
-    // Seleccionar una canción al azar de las disponibles
     let randomIndex = Math.floor(Math.random() * cancionesDisponibles.length);
     let cancionSeleccionada = cancionesDisponibles[randomIndex];
 
@@ -58,37 +57,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//Slider imagenes normales
 document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".imgslide"); // Obtiene todas las imágenes
+    let slides = document.querySelectorAll(".imgslide"); 
     let index = 0;
 
     function changeSlide() {
-        slides[index].classList.remove("act"); // Oculta la imagen actual
-        index = (index + 1) % slides.length; // Pasa a la siguiente imagen (circular)
-        slides[index].classList.add("act"); // Muestra la nueva imagen
+        slides[index].classList.remove("act"); 
+        index = (index + 1) % slides.length; 
+        slides[index].classList.add("act"); 
     }
 
-    setInterval(changeSlide, 3000); // Cambia cada 3 segundos
+    setInterval(changeSlide, 3000); 
 });
+
+//slider imagenes anchas
+document.addEventListener("DOMContentLoaded", function () {
+    let wideIndex = 0;
+    const wideSlides = document.querySelectorAll(".imgancho"); // Seleccionar correctamente las imágenes
+
+    function showWideSlides() {
+        wideSlides.forEach(slide => slide.classList.remove("act2"));
+        wideSlides[wideIndex].classList.add("act2");
+
+        wideIndex++;
+        if (wideIndex >= wideSlides.length) {
+            wideIndex = 0;
+        }
+    }
+
+    setInterval(showWideSlides, 3000);
+});
+
+
 
 // Código del clicker con guardado
 // Obtener el contador desde LocalStorage (si existe)
 let contador = localStorage.getItem("contadorTeAmo") ? parseInt(localStorage.getItem("contadorTeAmo")) : 0;
 
-// Mostrar el contador guardado
+
 document.getElementById("contador").textContent = contador;
 
-// Evento para aumentar el contador al hacer clic
+
 document.getElementById("teamo-btn").addEventListener("click", function() {
     if (contador < 1000) { 
         contador++;
         document.getElementById("contador").textContent = contador;
 
-        // Guardar el nuevo valor en LocalStorage
+        
         localStorage.setItem("contadorTeAmo", contador);
     }
 
-    // Cuando llega a 1000, mostrar la explosión de corazones
+    
     if (contador === 1000) {
         explosionDeCorazones();
     }
@@ -96,16 +116,16 @@ document.getElementById("teamo-btn").addEventListener("click", function() {
 
 // Función para la explosión de corazones
 function explosionDeCorazones() {
-    for (let i = 0; i < 30; i++) {  // Cantidad de corazones
+    for (let i = 0; i < 30; i++) {  
         let corazon = document.createElement("div");
         corazon.classList.add("corazon");
         document.body.appendChild(corazon);
 
-        // Posición aleatoria
+       
         corazon.style.left = Math.random() * window.innerWidth + "px";
         corazon.style.top = Math.random() * window.innerHeight + "px";
 
-        // Animación
+        
         setTimeout(() => {
             corazon.remove();
         }, 2000);
