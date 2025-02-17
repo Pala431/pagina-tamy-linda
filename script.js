@@ -1,17 +1,39 @@
+let canciones = [
+    "https://www.youtube.com/watch?v=PiSfroMnqWA",
+    "https://www.youtube.com/watch?v=Cb72z1ZKc70",
+    "https://www.youtube.com/watch?v=ekr2nIex040",
+    "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+    "https://www.youtube.com/watch?v=AjGkbFqi67c",
+    "https://www.youtube.com/watch?v=NwFVSclD_uc",
+    "https://www.youtube.com/watch?v=8Bu3N-2tA_0"
+];
+
+let cancionesReproducidas = [];
+let tiempoEspera = 3000; 
+let cancionAnterior = null;
 
 document.getElementById("yt-btn").addEventListener("click", function () {
-    let canciones = [
-        "https://www.youtube.com/watch?v=PiSfroMnqWA",
-        "https://www.youtube.com/watch?v=Cb72z1ZKc70",
-        "https://www.youtube.com/watch?v=ekr2nIex040",
-        "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
-        "https://www.youtube.com/watch?v=AjGkbFqi67c",
-        "https://www.youtube.com/watch?v=NwFVSclD_uc",
-        "https://www.youtube.com/watch?v=8Bu3N-2tA_0"
-    ];
+    if (cancionesReproducidas.length === canciones.length) {
+        cancionesReproducidas = [];
+    }
 
-    let randomIndex = Math.floor(Math.random() * canciones.length);
-    window.open(canciones[randomIndex], "_blank");
+    let cancionesDisponibles = canciones.filter(cancion => !cancionesReproducidas.includes(cancion));
+
+    let randomIndex = Math.floor(Math.random() * cancionesDisponibles.length);
+    let cancionSeleccionada = cancionesDisponibles[randomIndex];
+
+    cancionesReproducidas.push(cancionSeleccionada);
+
+ 
+    window.open(cancionSeleccionada, "_blank");
+
+   
+    document.getElementById("yt-btn").disabled = true;
+
+  
+    setTimeout(() => {
+        document.getElementById("yt-btn").disabled = false;
+    }, tiempoEspera);
 });
 
 
