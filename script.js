@@ -9,28 +9,31 @@ let canciones = [
 ];
 
 let cancionesReproducidas = [];
-let tiempoEspera = 5000; 
+let tiempoEspera = 60000; // Tiempo de espera en milisegundos (ej. 1 minuto)
 let cancionAnterior = null;
 
 document.getElementById("yt-btn").addEventListener("click", function () {
     if (cancionesReproducidas.length === canciones.length) {
+        // Si todas las canciones se han reproducido, reiniciamos
         cancionesReproducidas = [];
     }
 
     let cancionesDisponibles = canciones.filter(cancion => !cancionesReproducidas.includes(cancion));
-
+    
+    // Seleccionar una canción al azar de las disponibles
     let randomIndex = Math.floor(Math.random() * cancionesDisponibles.length);
     let cancionSeleccionada = cancionesDisponibles[randomIndex];
 
+    // Agregar la canción seleccionada a la lista de canciones reproducidas
     cancionesReproducidas.push(cancionSeleccionada);
 
- 
+    // Abrir la canción en una nueva ventana
     window.open(cancionSeleccionada, "_blank");
 
-   
+    // Desactivar el botón temporalmente
     document.getElementById("yt-btn").disabled = true;
 
-  
+    // Habilitar el botón después del tiempo de espera
     setTimeout(() => {
         document.getElementById("yt-btn").disabled = false;
     }, tiempoEspera);
