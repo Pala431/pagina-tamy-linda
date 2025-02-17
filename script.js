@@ -72,14 +72,46 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Código del clicker con guardado
+// Obtener el contador desde LocalStorage (si existe)
 let contador = localStorage.getItem("contadorTeAmo") ? parseInt(localStorage.getItem("contadorTeAmo")) : 0;
 
+// Mostrar el contador guardado
 document.getElementById("contador").textContent = contador;
+
+// Evento para aumentar el contador al hacer clic
 document.getElementById("teamo-btn").addEventListener("click", function() {
-    contador++;
-    document.getElementById("contador").textContent = contador;  
-    localStorage.setItem("contadorTeAmo", contador);
+    if (contador < 1000) { 
+        contador++;
+        document.getElementById("contador").textContent = contador;
+
+        // Guardar el nuevo valor en LocalStorage
+        localStorage.setItem("contadorTeAmo", contador);
+    }
+
+    // Cuando llega a 1000, mostrar la explosión de corazones
+    if (contador === 1000) {
+        explosionDeCorazones();
+    }
 });
+
+// Función para la explosión de corazones
+function explosionDeCorazones() {
+    for (let i = 0; i < 30; i++) {  // Cantidad de corazones
+        let corazon = document.createElement("div");
+        corazon.classList.add("corazon");
+        document.body.appendChild(corazon);
+
+        // Posición aleatoria
+        corazon.style.left = Math.random() * window.innerWidth + "px";
+        corazon.style.top = Math.random() * window.innerHeight + "px";
+
+        // Animación
+        setTimeout(() => {
+            corazon.remove();
+        }, 2000);
+    }
+}
+
 
 
 const musica = document.getElementById("musica");
