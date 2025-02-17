@@ -1,3 +1,4 @@
+// Boton musica aleatoria. 
 let canciones = [
     "https://www.youtube.com/watch?v=PiSfroMnqWA",
     "https://www.youtube.com/watch?v=Cb72z1ZKc70",
@@ -9,7 +10,7 @@ let canciones = [
 ];
 
 let cancionesReproducidas = [];
-let tiempoEspera = 3000; // Tiempo de espera en milisegundos (ej. 1 minuto)
+let tiempoEspera = 3000; 
 let cancionAnterior = null;
 
 document.getElementById("yt-btn").addEventListener("click", function () {
@@ -24,16 +25,10 @@ document.getElementById("yt-btn").addEventListener("click", function () {
     let randomIndex = Math.floor(Math.random() * cancionesDisponibles.length);
     let cancionSeleccionada = cancionesDisponibles[randomIndex];
 
-    // Agregar la canción seleccionada a la lista de canciones reproducidas
     cancionesReproducidas.push(cancionSeleccionada);
-
-    // Abrir la canción en una nueva ventana
     window.open(cancionSeleccionada, "_blank");
-
-    // Desactivar el botón temporalmente
     document.getElementById("yt-btn").disabled = true;
 
-    // Habilitar el botón después del tiempo de espera
     setTimeout(() => {
         document.getElementById("yt-btn").disabled = false;
     }, tiempoEspera);
@@ -76,11 +71,16 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(changeSlide, 3000); // Cambia cada 3 segundos
 });
 
-let contador = 0;
-document.getElementById("teamo-btn").addEventListener("click", function () {
+// Código del clicker con guardado
+let contador = localStorage.getItem("contadorTeAmo") ? parseInt(localStorage.getItem("contadorTeAmo")) : 0;
+
+document.getElementById("contador").textContent = contador;
+document.getElementById("teamo-btn").addEventListener("click", function() {
     contador++;
-    document.getElementById("contador").textContent = contador;
+    document.getElementById("contador").textContent = contador;  
+    localStorage.setItem("contadorTeAmo", contador);
 });
+
 
 const musica = document.getElementById("musica");
 const boton = document.getElementById("musica-btn");
