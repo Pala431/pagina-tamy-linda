@@ -6,7 +6,8 @@ document.getElementById("yt-btn").addEventListener("click", function () {
         "https://www.youtube.com/watch?v=ekr2nIex040",
         "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
         "https://www.youtube.com/watch?v=AjGkbFqi67c",
-        "https://www.youtube.com/watch?v=NwFVSclD_uc"
+        "https://www.youtube.com/watch?v=NwFVSclD_uc",
+        "https://youtu.be/8Bu3N-2tA_0?si=gqQTDc_-Ghe3T-BR&t=51"
     ];
 
     let randomIndex = Math.floor(Math.random() * canciones.length);
