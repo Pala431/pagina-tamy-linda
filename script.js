@@ -9,7 +9,7 @@ let canciones = [
 ];
 
 let cancionesReproducidas = [];
-let tiempoEspera = 3000; 
+let tiempoEspera = 5000; 
 let cancionAnterior = null;
 
 document.getElementById("yt-btn").addEventListener("click", function () {
