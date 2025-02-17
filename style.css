@@ -6,6 +6,20 @@ body {
     padding: 20px;
 }
 
+.corazon {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: url('img/corazon.png') no-repeat center/contain;
+    animation: explosion 1.5s ease-out;
+}
+
+@keyframes explosion {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.7; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
 .fondo {
     background: url("img/back.png") no-repeat center center fixed;
     background-size: cover; 
