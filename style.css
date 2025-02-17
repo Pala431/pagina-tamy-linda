@@ -5,6 +5,12 @@ body {
     color: #FFFACD;
     padding: 20px;
 }
+.centraryt {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    margin-top: 20px;  
+}
 
 .corazon {
     position: fixed;
