@@ -9,7 +9,7 @@ let canciones = [
 ];
 
 let cancionesReproducidas = [];
-let tiempoEspera = 60000; // Tiempo de espera en milisegundos (ej. 1 minuto)
+let tiempoEspera = 3000; // Tiempo de espera en milisegundos (ej. 1 minuto)
 let cancionAnterior = null;
 
 document.getElementById("yt-btn").addEventListener("click", function () {
