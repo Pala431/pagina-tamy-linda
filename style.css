@@ -219,3 +219,32 @@ footer {
     #musica-btn:hover {
         background: darkviolet;
     }
+
+.sliderancho {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgancho {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.imgancho.act2 {
+    display: block;
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
