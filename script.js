@@ -4,9 +4,15 @@ let canciones = [
     "https://www.youtube.com/watch?v=Cb72z1ZKc70",
     "https://www.youtube.com/watch?v=ekr2nIex040",
     "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+    "https://www.youtube.com/watch?v=T_FkEw27XJ0",
     "https://www.youtube.com/watch?v=ilUCwLLdltQ",
     "https://www.youtube.com/watch?v=NwFVSclD_uc",
-    "https://www.youtube.com/watch?v=aZLI14nFC4E"
+    "https://www.youtube.com/watch?v=aZLI14nFC4E",
+    "https://www.youtube.com/watch?v=78DVtcsT26k",
+    "https://www.youtube.com/watch?v=nyuo9-OjNNg",
+    "https://www.youtube.com/watch?v=h0p8yTqj8i4",
+    "https://www.youtube.com/watch?v=4OvhrzXu4Yo",
+    "https://www.youtube.com/watch?v=qU9mHegkTc4"
 ];
 
 let cancionesReproducidas = [];
