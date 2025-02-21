@@ -7,6 +7,7 @@ let canciones = [
     "https://www.youtube.com/watch?v=kPa7bsKwL-c",
     "https://www.youtube.com/watch?v=T_FkEw27XJ0",
     "https://www.youtube.com/watch?v=ilUCwLLdltQ",
+    "https://www.youtube.com/watch?v=1r6MFfMEziE",
     "https://www.youtube.com/watch?v=NwFVSclD_uc",
     "https://www.youtube.com/watch?v=aZLI14nFC4E",
     "https://www.youtube.com/watch?v=78DVtcsT26k",
